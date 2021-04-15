@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.(s[ac]|c)ss$/i, // reged: (starts with an s, then either a or c) OR css /i is case insensitive
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader", "postcss-loader"],
       },
     ],
   },
