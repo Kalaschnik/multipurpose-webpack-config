@@ -23,6 +23,10 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.css$/i, // /i is case insensitive
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
 
