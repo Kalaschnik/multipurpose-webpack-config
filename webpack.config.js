@@ -3,6 +3,10 @@ const path = require("path");
 
 const mode = process.env.NODE_ENV || "development";
 
+// Temporary workaround for 'browserslist' bug that is being patched in the near future
+// see: https://github.com/webpack/webpack-dev-server/issues/2758
+const target = process.env.NODE_ENV === "production" ? "browserslist" : "web";
+
 module.exports = {
   mode: mode, // default: production, other: development
 
@@ -34,6 +38,9 @@ module.exports = {
       patterns: [{ from: "public/", to: "./" }],
     }),
   ],
+
+  // defaults to "web", so only required for webpack-dev-server bug
+  target: target,
 
   devtool: "source-map",
 
