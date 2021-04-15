@@ -1,0 +1,10 @@
+:root {
+  --mainBG: salmon;
+}
+
+$light-text: moccasin;
+
+body {
+  background-color: $light-text;
+  color: var(--mainBG);
+}

@@ -1,4 +1,5 @@
-import "./style.css";
+import "./style.scss";
+import "./foo.css";
 
 import getClasses from "./getClasses";
 
