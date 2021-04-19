@@ -1,4 +1,8 @@
+// Webpack Plugins
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+// Node
 const path = require("path");
 
 const mode = process.env.NODE_ENV || "development";
@@ -27,8 +31,13 @@ module.exports = {
         },
       },
       {
-        test: /\.(s[ac]|c)ss$/i, // reged: (starts with an s, then either a or c) OR css /i is case insensitive
-        use: ["style-loader", "css-loader", "sass-loader", "postcss-loader"],
+        test: /\.(s[ac]|c)ss$/i, // regex: (starts with an s, then either a or c) OR css /i is case insensitive
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+          "postcss-loader",
+        ],
       },
     ],
   },
@@ -37,6 +46,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: "public/", to: "./" }],
     }),
+    new MiniCssExtractPlugin(),
   ],
 
   // defaults to "web", so only required for webpack-dev-server bug
