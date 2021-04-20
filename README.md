@@ -2,11 +2,12 @@
 
 ## Feature Support
 
-- Webpack
+- Webpack 5
   - Dev Server
   - Auto-switch mode to production when using `npm run build`
   - static assets sit in /public and get copied to dist on build (CRA style)
   - source-maps-enabled on dev
+  - MiniCssExtractPlugin to a get a `main.css` in dist
 - Babel (w/ `.babelrc`)
 - CSS/SCSS/SASS (w/ `postcss.config.js` and `browserslistrc`)
 - Boilerplate files
