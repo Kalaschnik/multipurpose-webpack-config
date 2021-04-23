@@ -14,6 +14,13 @@
   - site.webmanifest
   - apple/android icons
 
+## Not Supported
+
+- Chache Busting
+  - makes no sense for smaller apps), and this also requires another webpack plugin:
+- `HtmlWebpackPlugin`
+  - generates the `index.html` and hooks-up hashed .js, .css files
+
 ## Resources
 
 - https://www.youtube.com/watch?v=X1nxTjVDYdQ
