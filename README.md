@@ -4,6 +4,8 @@
 
 - Webpack
   - Dev Server
+  - Single Webpack Config for Dev and Production
+    - If this should be splitted check [this video](https://www.youtube.com/watch?v=VR5y93CNzeA&list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8&index=7)
   - Auto-switch mode to production when using `npm run build`
   - static assets sit in /public and get copied to dist on build (CRA style)
   - source-maps-enabled on dev
@@ -20,6 +22,7 @@
   - makes no sense for smaller apps), and this also requires another webpack plugin:
 - `HtmlWebpackPlugin`
   - generates the `index.html` and hooks-up hashed .js, .css files
+-
 
 ## Resources
 
