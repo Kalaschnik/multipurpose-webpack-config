@@ -2,13 +2,14 @@
 
 ## Feature Support
 
-- Webpack
+- Webpack 5
   - Dev Server
   - Single Webpack Config for Dev and Production
     - If this should be splitted check [this video](https://www.youtube.com/watch?v=VR5y93CNzeA&list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8&index=7)
   - Auto-switch mode to production when using `npm run build`
   - static assets sit in /public and get copied to dist on build (CRA style)
   - source-maps-enabled on dev
+  - MiniCssExtractPlugin to a get a `main.css` in dist
 - Babel (w/ `.babelrc`)
 - CSS/SCSS/SASS (w/ `postcss.config.js` and `browserslistrc`)
 - Boilerplate files
