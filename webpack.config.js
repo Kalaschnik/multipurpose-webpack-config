@@ -54,6 +54,7 @@ module.exports = {
 
   devtool: "source-map",
 
+  // enables hot reload (WDS) for dev-server
   devServer: {
     contentBase: "./dist",
   },
