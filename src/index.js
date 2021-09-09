@@ -1,13 +1,25 @@
-import "./style.scss";
-import "./foo.css";
+import './style.scss';
+import './foo.css';
 
-import getClasses from "./getClasses";
+import getClasses from './getClasses';
 
-console.log("ran from index.js");
+console.log('ran from index.js');
 
-const obj = { a: "alpha", b: "bravo" };
+const obj = { a: 'alpha', b: 'bravo' };
 
-const newObj = { ...obj, c: "charlie" };
+const newObj = { ...obj, c: 'charlie' };
 console.log(newObj);
 
 getClasses();
+
+const response = await fetch('https://api.chucknorris.io/jokes/random');
+const data = await response.json();
+console.log(data.value);
+
+(async () => {
+  console.log('calling');
+  const responseAsync = await fetch('https://api.chucknorris.io/jokes/random');
+  const dataAsync = await responseAsync.json();
+  console.log(dataAsync.value);
+  // expected output: "resolved"
+})();
