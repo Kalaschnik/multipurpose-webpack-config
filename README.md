@@ -17,6 +17,8 @@
   - favicon.ico
   - site.webmanifest
   - apple/android icons
+- Deploy script
+  - `rsync`s the contents from dist to server (config via `.npmrc`)
 
 ## Not Supported
 
