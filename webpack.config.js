@@ -36,8 +36,8 @@ module.exports = {
           // note that array’s order of execution is revered. The last one is the one that is executed first.
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader',
           'postcss-loader',
+          'sass-loader',
         ],
       },
     ],
