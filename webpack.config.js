@@ -14,10 +14,10 @@ const target = process.env.NODE_ENV === 'production' ? 'browserslist' : 'web';
 module.exports = {
   mode: mode, // default: production, other: development
 
-  // entry: "./src/index.js", // default: ./src/index.js
+  // entry: "./src/app.js", // default: ./src/index.js
   // output: {
   //   filename: "bundle.js", // default: main.js
-  //   path: path.resolve(__dirname, "public"), // <- default: dist
+  //   path: path.resolve(__dirname, "build"), // default: dist
   // },
 
   module: {
@@ -33,6 +33,7 @@ module.exports = {
       {
         test: /\.(s[ac]|c)ss$/i, // regex: (starts with an s, then either a or c) OR css /i is case insensitive
         use: [
+          // note that array’s order of execution is revered. The last one is the one that is executed first.
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
