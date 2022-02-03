@@ -14,7 +14,13 @@ const target = process.env.NODE_ENV === 'production' ? 'browserslist' : 'web';
 module.exports = {
   mode: mode, // default: production, other: development
 
+  // Single entry point:
   // entry: "./src/app.js", // default: ./src/index.js
+  // Multiple entry points:
+  entry: {
+    main: './src/index.js', // main.js will be the name in the dist folder
+    order: './src/order.js',
+  },
   // output: {
   //   filename: "bundle.js", // default: main.js
   //   path: path.resolve(__dirname, "build"), // default: dist

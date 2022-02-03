@@ -19,6 +19,8 @@
   - apple/android icons
 - Deploy script
   - `rsync`s the contents from dist to server (config via `.npmrc`)
+- Support for multipage files
+  - See entry points in `webpack.config.js`
 
 ## Not Supported
 
