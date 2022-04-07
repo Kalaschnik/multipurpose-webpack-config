@@ -40,6 +40,9 @@ module.exports = {
         use: {
           // without additional settings, this will refer to .babelrc
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
         },
       },
       {
