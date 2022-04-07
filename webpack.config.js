@@ -30,6 +30,7 @@ module.exports = {
     filename: '[name].[contenthash].js', // default: main.js
     path: path.join(__dirname, 'dist'), // default: dist
     clean: true, // removes old hash files in dist
+    assetModuleFilename: '[name][ext]', // default: [hash][ext]
   },
 
   module: {
@@ -43,6 +44,10 @@ module.exports = {
           'postcss-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(png|svg|gif|jpg|jpeg)$/i,
+        type: 'asset/resource',
       },
     ],
   },

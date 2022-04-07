@@ -1,5 +1,6 @@
 import './style.scss';
 import './foo.css';
+import logoImg from './logo.svg';
 
 import getClasses from './getClasses';
 
@@ -23,3 +24,6 @@ console.log(data.value);
   console.log(dataAsync.value);
   // expected output: "resolved"
 })();
+
+const logoImgTag = document.getElementById('logo');
+logoImgTag.src = logoImg;
