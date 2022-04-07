@@ -12,7 +12,6 @@
 - Cache busting
 - source-maps-enabled on dev
 - MiniCssExtractPlugin to a get a `main.css` in dist
-- Babel (w/ `.babelrc`)
 - CSS/SCSS/SASS (w/ `postcss.config.js` and `browserslistrc`)
 - Boilerplate files
   - favicon.ico
