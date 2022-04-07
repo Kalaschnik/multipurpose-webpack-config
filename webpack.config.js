@@ -1,6 +1,7 @@
 // Webpack Plugins
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Node
 const path = require('path');
@@ -11,6 +12,7 @@ const mode = process.env.NODE_ENV || 'development';
 // see: https://github.com/webpack/webpack-dev-server/issues/2758
 const target = process.env.NODE_ENV === 'production' ? 'browserslist' : 'web';
 
+// Webpack Configuration
 module.exports = {
   mode: mode, // default: production, other: development
 
@@ -21,10 +23,12 @@ module.exports = {
     main: './src/index.js', // main.js will be the name in the dist folder
     order: './src/order.js',
   },
-  // output: {
-  //   filename: "bundle.js", // default: main.js
-  //   path: path.resolve(__dirname, "build"), // default: dist
-  // },
+  // if you hace multiple entry points, use [name].js to resolve output file names to match the
+  // entry point key
+  output: {
+    filename: '[name].[contenthash].js', // default: main.js
+    path: path.resolve(__dirname, 'dist'), // default: dist
+  },
 
   module: {
     rules: [
@@ -54,6 +58,16 @@ module.exports = {
       patterns: [{ from: 'public/', to: './' }],
     }),
     new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Webpack 5 Boilerplate',
+      filename: 'index.html', // default: index.html
+      template: './src/index.html',
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['order'], // or multiple entry points: chunks: ['order', 'main']
+      title: 'Subpage',
+      filename: 'subpage.html',
+    }),
   ],
 
   // defaults to "web", so only required for webpack-dev-server bug

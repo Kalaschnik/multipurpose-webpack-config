@@ -1,16 +1,17 @@
-# My Multipurpose Webpack Config
+# My Multipurpose Webpack 5 Config
 
-## Feature Support
+## Config Overview
 
-- Webpack 5
-  - Dev Server
-  - Top-Level await
-  - Single Webpack Config for Dev and Production
-    - If this should be splitted check [this video](https://www.youtube.com/watch?v=VR5y93CNzeA&list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8&index=7)
-  - Auto-switch mode to production when using `npm run build`
-  - static assets sit in /public and get copied to dist on build (CRA style)
-  - source-maps-enabled on dev
-  - MiniCssExtractPlugin to a get a `main.css` in dist
+- Dev Server
+- Top-Level await
+- Single Webpack Config for Dev and Production
+  - If this should be splitted check [this video](https://www.youtube.com/watch?v=VR5y93CNzeA&list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8&index=7)
+- Auto-switch mode to production when using `npm run build`
+- static assets sit in /public and get copied to dist on build (CRA style)
+- Using HtmlWebpackPlugin with templates for multiple entry points and outputs
+- Cache busting
+- source-maps-enabled on dev
+- MiniCssExtractPlugin to a get a `main.css` in dist
 - Babel (w/ `.babelrc`)
 - CSS/SCSS/SASS (w/ `postcss.config.js` and `browserslistrc`)
 - Boilerplate files
@@ -21,14 +22,6 @@
   - `rsync`s the contents from dist to server (config via `.npmrc`)
 - Support for multipage files
   - See entry points in `webpack.config.js`
-
-## Not Supported
-
-- Chache Busting
-  - makes no sense for smaller apps), and this also requires another webpack plugin:
-- `HtmlWebpackPlugin`
-  - generates the `index.html` and hooks-up hashed .js, .css files
--
 
 ## Resources
 
