@@ -3,7 +3,7 @@ import './foo.css';
 
 import getClasses from './getClasses';
 
-console.log('ran from index.js');
+console.log('ran from index.js!!++!!');
 
 const obj = { a: 'alpha', b: 'bravo' };
 

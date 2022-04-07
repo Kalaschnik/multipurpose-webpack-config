@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Node
+// importing path is not needed anymore
 const path = require('path');
 
 const mode = process.env.NODE_ENV || 'development';
@@ -27,7 +28,8 @@ module.exports = {
   // entry point key
   output: {
     filename: '[name].[contenthash].js', // default: main.js
-    path: path.resolve(__dirname, 'dist'), // default: dist
+    path: path.join(__dirname, 'dist'), // default: dist
+    clean: true, // removes old hash files in dist
   },
 
   module: {
@@ -67,6 +69,7 @@ module.exports = {
       chunks: ['order'], // or multiple entry points: chunks: ['order', 'main']
       title: 'Subpage',
       filename: 'subpage.html',
+      template: './src/subpage-a.html',
     }),
   ],
 
@@ -77,8 +80,20 @@ module.exports = {
 
   // enables hot reload (WDS) for dev-server
   devServer: {
-    contentBase: './dist',
-    watchContentBase: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    port: 3000,
+    open: true, // open browser window automatically
+    hot: true, // enable hot reload
+    // compress: true, // enable gzip compression
+    historyApiFallback: true, // enable HTML5 history API
+    devMiddleware: { writeToDisk: true },
+  },
+  // Use devMiddleware and optimization if HMR is not working; see:
+  // https://stackoverflow.com/a/66197410/2258480
+  optimization: {
+    runtimeChunk: 'single',
   },
 
   experiments: {
