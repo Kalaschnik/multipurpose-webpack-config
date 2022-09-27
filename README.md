@@ -13,6 +13,7 @@
 - source-maps-enabled on dev
 - MiniCssExtractPlugin to a get a `main.css` in dist
 - CSS/SCSS/SASS (w/ `postcss.config.js` and `browserslistrc`)
+- Inline SVG support
 - Boilerplate files
   - favicon.ico
   - site.webmanifest

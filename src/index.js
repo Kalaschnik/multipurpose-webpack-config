@@ -18,12 +18,13 @@ const data = await response.json();
 console.log(data.value);
 
 (async () => {
-  console.log('calling');
-  const responseAsync = await fetch('https://api.chucknorris.io/jokes/random');
-  const dataAsync = await responseAsync.json();
-  console.log(dataAsync.value);
-  // expected output: "resolved"
+	console.log('calling');
+	const responseAsync = await fetch('https://api.chucknorris.io/jokes/random');
+	const dataAsync = await responseAsync.json();
+	console.log(dataAsync.value);
+	// expected output: "resolved"
 })();
 
-const logoImgTag = document.getElementById('logo');
-logoImgTag.src = logoImg;
+// get logo id
+const logo = document.getElementById('logo');
+logo.innerHTML = `${logoImg}`;
